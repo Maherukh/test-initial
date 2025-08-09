@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Hero – Variant B (Inset Card + Bento)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            inter: ['Inter', 'ui-sans-serif', 'system-ui'],
+            playfair: ['"Playfair Display"', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portfolio_theme_1.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+  <header class="w-full max-w-7xl mx-auto px-6 md:px-8 py-6 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-xl hero-card grid place-items-center border" style="border-color: var(--border)">
+        <span class="font-semibold">MA</span>
+      </div>
+      <span class="text-sm text-muted">Designer & Frontend</span>
+    </div>
+    <nav class="hidden md:flex items-center gap-6 text-sm">
+      <a href="#work" class="hover:opacity-80 transition">Work</a>
+      <a href="#about" class="hover:opacity-80 transition">About</a>
+      <a href="#contact" class="hover:opacity-80 transition">Contact</a>
+      <a href="#cv" class="button-ghost px-3 py-1.5 rounded-lg">Resume</a>
+    </nav>
+  </header>
+
+  <main class="w-full max-w-7xl mx-auto px-6 md:px-8 pb-16 md:pb-24 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+    <section class="order-2 lg:order-1">
+      <div class="inset-card p-6">
+        <span class="badge">Available for freelance</span>
+        <h1 class="hero-title font-semibold tracking-tight mt-4 outline-title">Hi, I’m Maherukh — Product Designer & Front‑end Developer</h1>
+        <p class="hero-sub mt-4 max-w-2xl">Clean, fast, accessible interfaces with systems thinking.</p>
+        <div class="mt-7 flex flex-wrap items-center gap-3">
+          <a href="#contact" class="button-primary px-5 py-3 rounded-xl">Hire me</a>
+          <a href="#work" class="button-ghost px-5 py-3 rounded-xl">View work</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="order-1 lg:order-2">
+      <div class="inset-card overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=1400&auto=format&fit=crop" class="w-full aspect-[4/3] object-cover" alt="Portrait" />
+      </div>
+    </section>
+  </main>
+
+  <section id="work" class="w-full max-w-7xl mx-auto px-6 md:px-8 pb-20">
+    <h2 class="text-2xl md:text-3xl font-semibold mb-6" style="font-family: var(--font-serif)">Bento Highlights</h2>
+    <div id="tiles" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[160px] gap-4">
+      <!-- Example tiles -->
+      <button class="tile group col-span-1 row-span-2 relative rounded-2xl overflow-hidden border" data-img="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover transition duration-300 group-hover:scale-[1.03]" alt="Work 1" />
+      </button>
+      <button class="tile group col-span-1 row-span-1 relative rounded-2xl overflow-hidden border" data-img="https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=1600&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=1200&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover transition duration-300 group-hover:scale-[1.03]" alt="Work 2" />
+      </button>
+      <button class="tile group col-span-1 row-span-1 relative rounded-2xl overflow-hidden border" data-img="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1000&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover transition duration-300 group-hover:scale-[1.03]" alt="Work 3" />
+      </button>
+      <button class="tile group col-span-1 row-span-2 relative rounded-2xl overflow-hidden border" data-img="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1600&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1200&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover transition duration-300 group-hover:scale-[1.03]" alt="Work 4" />
+      </button>
+      <button class="tile group col-span-1 row-span-1 relative rounded-2xl overflow-hidden border" data-img="https://images.unsplash.com/photo-1606925797300-0dfc3f3f43bd?q=80&w=1600&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1606925797300-0dfc3f3f43bd?q=80&w=1200&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover transition duration-300 group-hover:scale-[1.03]" alt="Work 5" />
+      </button>
+    </div>
+  </section>
+
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+    <div class="lightbox-card">
+      <button id="closeLightbox" class="close-btn" aria-label="Close preview">
+        <i data-lucide="x"></i>
+      </button>
+      <img id="lightboxImg" src="" alt="Preview" class="max-w-[92vw] max-h-[86vh] object-contain bg-black/2">
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('tiles').classList.add('tiles-ready');
+      if (window.lucide) lucide.createIcons();
+    });
+
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    const closeBtn = document.getElementById('closeLightbox');
+
+    document.querySelectorAll('#tiles .tile').forEach(btn => {
+      btn.addEventListener('click', () => {
+        lbImg.src = btn.getAttribute('data-img');
+        lb.classList.add('open');
+      });
+    });
+
+    function closeLB() {
+      lb.classList.remove('open');
+      setTimeout(() => { lbImg.src = ''; }, 200);
+    }
+
+    closeBtn.addEventListener('click', closeLB);
+    lb.addEventListener('click', (e) => { if (e.target === lb) closeLB(); });
+    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLB(); });
+  </script>
+</body>
+</html>

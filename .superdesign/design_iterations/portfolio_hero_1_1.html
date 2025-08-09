@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Hero – Improved Readability</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { inter: ['Inter','ui-sans-serif','system-ui'], playfair: ['"Playfair Display"','serif'] }}}}
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portfolio_theme_1.css">
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.0.0/dist/flowbite.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    /* Text readability upgrades */
+    .text-panel { background: linear-gradient(180deg, oklch(1 0 0 / .85), oklch(1 0 0 / .9)) !important; border: 1px solid var(--border) !important; border-radius: var(--radius) !important; box-shadow: var(--shadow-sm) !important; }
+    .text-panel h1 { text-shadow: 0 1px 0 hsl(0 0% 100% / .4) !important; }
+    .hero-sub { color: color-mix(in oklab, var(--foreground) 76%, black 6%) !important; }
+    .eyebrow { border:1px solid var(--border) !important; box-shadow: 0 1px 0 hsl(0 0% 100% / .7) inset !important; }
+
+    .fade-up { opacity: 0; transform: translateY(24px); animation: fadeUp 600ms cubic-bezier(.22,1,.36,1) forwards; }
+    .fade-up-delayed { animation-delay: 120ms; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+    .stagger-child > * { opacity: 0; transform: translateY(12px); }
+    .stagger-child.appear > * { animation: rise 700ms cubic-bezier(.22,1,.36,1) forwards; }
+    .stagger-child.appear > *:nth-child(1){ animation-delay: 40ms; }
+    .stagger-child.appear > *:nth-child(2){ animation-delay: 120ms; }
+    .stagger-child.appear > *:nth-child(3){ animation-delay: 200ms; }
+    @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+
+    .cta-pop { transform: scale(.96); animation: ctaIn 220ms ease-out forwards; }
+    @keyframes ctaIn { to { transform: scale(1); } }
+
+    .float-loop { animation: floatY 6s ease-in-out infinite; }
+    .float-loop.delay-1 { animation-delay: .8s; }
+    .float-loop.delay-2 { animation-delay: 1.6s; }
+    @keyframes floatY { 0%,100%{ transform: translateY(0)} 50%{ transform: translateY(-6px)} }
+
+    .focus-pulse:focus-visible { outline: none !important; box-shadow: 0 0 0 4px color-mix(in oklab, var(--ring) 45%, white) !important; transform: translateY(-1px) scale(1.01); }
+    body { font-family: var(--font-sans) !important; }
+    h1,h2,h3 { font-family: var(--font-serif) !important; }
+  </style>
+</head>
+<body class="min-h-screen relative overflow-x-hidden">
+  <div aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 w-[38rem] h-[38rem] rounded-full opacity-30 blur-3xl" style="background: radial-gradient(closest-side, oklch(0.97 0.05 30), transparent 65%);"></div>
+  <div aria-hidden="true" class="pointer-events-none absolute -bottom-24 -right-24 w-[44rem] h-[44rem] rounded-full opacity-20 blur-3xl" style="background: radial-gradient(closest-side, oklch(0.98 0.07 70), transparent 60%);"></div>
+
+  <header class="w-full max-w-7xl mx-auto px-6 md:px-8 py-6 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-xl hero-card grid place-items-center border" style="border-color: var(--border)"><span class="font-semibold">MA</span></div>
+      <span class="text-sm text-muted">Designer & Frontend</span>
+    </div>
+    <nav class="hidden md:flex items-center gap-6 text-sm">
+      <a href="#work" class="hover:opacity-80 transition">Work</a>
+      <a href="#about" class="hover:opacity-80 transition">About</a>
+      <a href="#contact" class="hover:opacity-80 transition">Contact</a>
+      <a href="#cv" class="button-ghost px-3 py-1.5 rounded-lg focus-pulse">Resume</a>
+    </nav>
+  </header>
+
+  <main class="w-full max-w-7xl mx-auto px-6 md:px-8 pt-2 pb-16 md:pb-24 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+    <section class="order-2 lg:order-1">
+      <div class="badge eyebrow inline-flex items-center gap-2 fade-up">Available for freelance</div>
+
+      <!-- Text panel with border for readability -->
+      <div class="mt-5 p-5 md:p-6 text-panel">
+        <div class="stagger-child">
+          <h1 class="hero-title font-semibold tracking-tight">Hi, I’m Maherukh — Product Designer & Front‑end Developer</h1>
+          <p class="hero-sub mt-4 max-w-2xl">I design clean, fast, accessible interfaces that focus on outcomes. I blend visual polish with systems thinking to ship reliable, scalable UI.</p>
+        </div>
+        <div class="mt-7 flex flex-wrap items-center gap-3">
+          <a href="#contact" class="button-primary px-5 py-3 rounded-xl cta-pop focus-pulse">Hire me</a>
+          <a href="#work" class="button-ghost px-5 py-3 rounded-xl cta-pop focus-pulse">View work</a>
+        </div>
+        <div class="mt-6 flex items-center gap-3">
+          <button class="icon-btn focus-pulse" aria-label="GitHub"><i data-lucide="github"></i></button>
+          <button class="icon-btn focus-pulse" aria-label="LinkedIn"><i data-lucide="linkedin"></i></button>
+          <button class="icon-btn focus-pulse" aria-label="X"><i data-lucide="twitter"></i></button>
+          <button class="icon-btn focus-pulse" aria-label="Email"><i data-lucide="mail"></i></button>
+        </div>
+      </div>
+
+      <p class="mt-5 text-sm text-muted">Based in Kolkata • Open to remote</p>
+    </section>
+
+    <section class="order-1 lg:order-2 relative">
+      <div class="hero-card relative p-3 md:p-4 rounded-2xl fade-up fade-up-delayed">
+        <img src="https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=1400&auto=format&fit=crop" alt="Portrait" class="w-full aspect-[4/3] object-cover rounded-xl">
+        <div class="absolute -left-4 top-6">
+          <div class="hero-card px-4 py-2 rounded-xl text-sm float-loop"><span class="font-semibold">6+ yrs</span><span class="text-muted ml-2">experience</span></div>
+        </div>
+        <div class="absolute -right-4 bottom-10">
+          <div class="hero-card px-4 py-2 rounded-xl text-sm float-loop delay-1"><span class="font-semibold">28</span><span class="text-muted ml-2">projects</span></div>
+        </div>
+        <div class="absolute left-6 -bottom-4">
+          <div class="hero-card px-4 py-2 rounded-xl text-sm float-loop delay-2"><span class="inline-block w-2.5 h-2.5 rounded-full mr-2" style="background: var(--accent)"></span><span class="font-semibold">Booking Q2</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="w-full max-w-7xl mx-auto px-6 md:px-8 pb-10 text-xs text-muted">© 2024 Your Name. Crafted with care.</footer>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.stagger-child').forEach(c => requestAnimationFrame(() => c.classList.add('appear')));
+      if (window.lucide) lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
